@@ -1,0 +1,276 @@
+header {
+    width: calc(100% - 36vh);
+    padding: 0 18vh;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #f1f1f186;
+    backdrop-filter: blur(5px);
+    z-index: 300;
+}
+
+
+/* Header left */
+.header__left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7px;
+    user-select: none;
+}
+
+ul.links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.links li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: #858585;
+    fill: #858585;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s ease;
+    position: relative;
+}
+
+.links li p {
+    margin: 0 2px 0 0;
+}
+
+.links li svg {
+    width: 16px;
+}
+
+.links li:hover {
+    color: #1d1d1d;
+    fill: #1d1d1d;
+}
+
+.links li:hover svg {
+    animation: arrowUp .3s ease forwards alternate;
+}
+
+@keyframes arrowUp {   to { transform: rotate(180deg); }   }
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    width: max-content;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px #00000021;
+    cursor: auto;
+    transform: translateY(-15%);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.dropdown p {
+    margin: 0;
+}
+
+.features {
+    right: 0;
+}
+
+.features li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+}
+
+.features li img {
+    height: 20px;
+    object-fit: contain;
+}
+
+.dropdown li p {
+    padding: 5px;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+.features li p {
+    width: max-content;
+    margin-left: 10px;
+}
+
+.dropdown li:hover p {
+    background: #dfdfdf9d;
+}
+
+.dropdown--show {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* Header right */
+ul.header__right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    color: #858585;
+    margin: 0;
+}
+
+.header__right li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+li.register {
+    border: 2px solid #858585;
+    border-radius: 15px;
+}
+
+.header__right li:hover {
+    color: #1d1d1d;
+    border-color: #1d1d1d;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: url('../images/icon-menu.svg') no-repeat center;
+    z-index: 999;
+}
+
+.menu--open {
+    background-image: url('../images/icon-close-menu.svg');
+}
+
+/* For mobile */
+aside {
+    position: fixed;
+    overflow-y: auto;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    width: 50%;
+    max-width: 180px;
+    height: calc(100vh - 80px);
+    padding: 60px 20px 20px 25px;
+    background: #Fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: .3s ease;
+}
+
+aside::-webkit-scrollbar {
+    display: none;
+}
+
+aside ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+aside .links {
+    gap: 20px;
+    align-items: flex-start;
+    height: max-content;
+}
+
+aside .header__right {
+    gap: 10px;
+}
+
+aside .header__right li {
+    width: 80%;
+}
+
+.aside--open {
+    transform: translateX(0%);
+}
+
+.aside__overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0000008f;
+    z-index: 150;
+    transition: .3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.aside__overlay--show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+aside li {
+    user-select: none;
+    z-index: 10;
+    height: max-content;
+}
+
+aside .extend {
+    display: block;
+}
+
+aside .extend p, aside .extend svg {
+    display: inline-flex;
+}
+
+aside .dropdown {
+    top: 65px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    inset: 0;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: none;
+    opacity: 0;
+    transform: translate(-10%, -30%);
+    background: transparent;
+    pointer-events: none;
+    transition: .3s ease transform;
+    z-index: 1;
+}
+
+aside .dropdown--show {
+    position: static;
+    transform: translate(0%, 0%);
+    opacity: 1;
+    pointer-events: all;
+}

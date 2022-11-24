@@ -1,0 +1,123 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Epilogue;
+    font-weight: 500;
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: #858585;
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    text-align: center;
+}
+.attribution a { color: #3e52a3a8; }
+.attribution a:hover { text-decoration: none; }
+
+
+@media screen and (max-width: 1050px) {
+    
+    main {
+        width: calc(100% - 8vw);
+        padding: 4vw;
+        gap: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 950px) {
+    header {
+        width: calc(100% - 6vh);
+        padding: 0 3vh;
+    }
+    
+    .menu {
+        display: flex;
+    }
+    .header__left ul, header > .header__right {
+        display: none !important;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__left, .main__right{
+        width: 100%;
+    }
+
+    .main__left {
+        width: 100% !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__right img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 60px;
+    }
+
+    main {
+        width: 100%;
+        flex-direction: column-reverse;
+        height: max-content;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .main__right img {
+        width: 100% !important;
+        height: max-content;
+    }
+
+    .main__right {
+        height: max-content;
+    }
+
+    .main__left {
+        width: calc(100% - 40px) !important;
+        margin: 0;
+        padding: 20px !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .main__left > p {
+        margin: 20px 0 30px 0;
+    }  
+
+    .clients {
+        margin-top: 50px;
+        gap: 18px;
+    }
+
+    .clients img {
+        width: 100%;
+        height: 15px;
+    }
+
+    .client-extend {
+        height: 22px !important;
+    }
+}
